@@ -4,8 +4,9 @@
 }
 
 /* #main {
-    background-color: darkgreen;
+    background-color: darkblue;
     width: 400px;
+    height: 700px
 } */
 
 /* is the main div necessary? */
@@ -29,6 +30,10 @@
     height: 80px;
 }
 
+/* .grid-container {
+    display: in-line grid;
+} */
+
 /* 
 .line1 {
     background-color: darkslateblue;
@@ -51,7 +56,8 @@
 } */
 
 button {
-    font-size: large;
+    font-family: 'Orbitron', sans-serif;
+    font-size: x-large;
     font-weight: bolder;
     align-content: center;
     justify-content: center;
@@ -63,7 +69,7 @@ button {
     border: 1px solid;
     width: 87px;
     border-radius: 8px;
-
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -77,5 +83,22 @@ button {
 }
 
 #unique {
-    width: 260px
+    width: 260px;
+    background-color: rgb(127, 124, 124);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    pointer-events: none;
 }
+
+button:hover {
+    background-color: #ba77d7;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:active {
+    background-color: #b251df;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* is there a way to remove rules from one button specifically using #unique */
