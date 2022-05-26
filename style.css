@@ -80,4 +80,12 @@ button:active {
     transform: translateY(4px);
 }
 
-/* is there a way to remove rules from one button specifically using #unique */
+/* is there a way to remove rules from one button specifically using #unique bc i don't want #unique button to be logged */
+
+.unhighlight {
+    border: 5px solid white;
+}
+
+.highlight {
+    border: 5px solid yellow;
+}
