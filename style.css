@@ -30,30 +30,9 @@
     height: 80px;
 }
 
-/* .grid-container {
-    display: in-line grid;
-} */
-
-/* 
-.line1 {
-    background-color: darkslateblue;
+.end {
+    background-color: rgb(208, 179, 215);
 }
-
-.line2 {
-    background-color: palegoldenrod;
-}
-
-.line3 {
-    background-color: darkcyan;
-}
-
-.line4 {
-    background-color: darkolivegreen;
-}
-
-.line5 {
-    background-color: paleturquoise;
-} */
 
 button {
     font-family: 'Orbitron', sans-serif;
