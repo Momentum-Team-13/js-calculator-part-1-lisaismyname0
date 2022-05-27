@@ -1,7 +1,7 @@
 let buttons = document.querySelectorAll("button");
-console.log(buttons);
 const equals = document.getElementById("equals");
-
+const multiplier = document.getElementById("multiply");
+const eraser = document.getElementById("clear")
 
 let result = document.createElement("div");
 const display = document.querySelector("#display")
@@ -15,26 +15,41 @@ for (let button of buttons) {
 
         if (event.target.id === "equals") {
             console.log("equals!");
-            result.innerText = eval(display.innerText);
+            display.appendChild(result);
+            result.innerText = math.eval(display.innerText);
             // dom manipulation means replacing this with the value i want;
-            return
+            // return
 
         }
-        // else if (condition) { what i want done for that specific button
+        else if (event.target.id === "clear") {
+            result.innerText = "    ";
+        }
 
+        // else if (event.target.id === "multiplier") {
+        //     result.innerText = eval(display.innerText)
+        //     display.appendChild(result);
         // }
+
         else {
             result.innerText += event.target.textContent;
         }
 
+
     });
 }
 
+let operators = document.querySelectorAll(".operator");
 
-// eval can do the math that is in the display
-// clear can be inner text = nothing
-// put math.eval() will do the math for you .. can attach that to the equals button
-// if event target is eval we do something and if event target is clear then we do something esle
+for (let operator of operators) {
+    operator.addEventListener("click", function (event) {
+        if (event.target.id === "multiplier") {
+            // result.innerText += event.target.textContent;
+            console.log(result.innerText);
+        }
+    }
+    )
+}
+
 
 // TODO
 // Use these to do ** (for example)
@@ -43,8 +58,6 @@ for (let button of buttons) {
 
 //  math.eval(display.innerText)
 
-// let operators = document.querySelectorAll(".operator");
-// console.log(operators);
 
 // for (let number of numbers) {
 //     number.addEventListener("click", function (event) {
@@ -52,20 +65,3 @@ for (let button of buttons) {
 //         console.log(event.target.textContent)
 //     })
 // }
-
-
-// for (let operator of operators) {
-//     operator.addEventListener("click", function (event) {
-//         return event.target.textContent;
-//         console.log(event.target.textContent)
-//     }
-//     )
-// }
-
-
-
-// let num1 (i want this to be the returned value of the click event listenrs)
-
-// num1 =
-
-// click number-- > if not operator, then add secondNumber to value, if operator, perform function of operator 
