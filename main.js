@@ -3,30 +3,45 @@ console.log(buttons);
 const equals = document.getElementById("equals");
 
 
-let newElement = document.createElement("p");
+let result = document.createElement("div");
 const display = document.querySelector("#display")
-
 
 console.log(buttons[0].classList);
 
 for (let button of buttons) {
     button.addEventListener("click", function (event) {
         console.log(event.target.textContent);
+        display.appendChild(result);
+
         if (event.target.id === "equals") {
             console.log("equals!");
+            result.innerText = eval(display.innerText);
+            // dom manipulation means replacing this with the value i want;
             return
+
         }
-        newElement.innerText += event.target.textContent;
-        display.appendChild(newElement);
+        // else if (condition) { what i want done for that specific button
+
+        // }
+        else {
+            result.innerText += event.target.textContent;
+        }
+
     });
 }
 
 
+// eval can do the math that is in the display
+// clear can be inner text = nothing
+// put math.eval() will do the math for you .. can attach that to the equals button
+// if event target is eval we do something and if event target is clear then we do something esle
 
 // TODO
 // Use these to do ** (for example)
 // let numbers = document.querySelectorAll(".number");
 // console.log(numbers);
+
+//  math.eval(display.innerText)
 
 // let operators = document.querySelectorAll(".operator");
 // console.log(operators);
