@@ -61,14 +61,6 @@ button {
     margin: 0px;
 }
 
-#unique {
-    width: 260px;
-    background-color: rgb(127, 124, 124);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
-    pointer-events: none;
-}
-
 button:hover {
     background-color: #ba77d7;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -82,14 +74,6 @@ button:active {
 
 /* is there a way to remove rules from one button specifically using #unique bc i don't want #unique button to be logged */
 #display {
-    /* border: 2px dotted green;
-    font-size: 5em;
-    width: 300px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: end; */
-
     width: 260px;
     background-color: rgb(127, 124, 124);
     font-family: 'Orbitron', sans-serif;
@@ -97,4 +81,16 @@ button:active {
     pointer-events: none;
     justify-content: end;
     display: flex;
+    font-family: 'Orbitron', sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    align-content: center;
+    justify-content: center;
+    color: whitesmoke;
+    padding: 16px;
+    margin: 0px;
+    float: left;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

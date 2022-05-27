@@ -1,44 +1,51 @@
-let clicks = document.querySelectorAll(".click");
-console.log(clicks);
+let buttons = document.querySelectorAll("button");
+console.log(buttons);
+const equals = document.getElementById("equals");
+
 
 let newElement = document.createElement("p");
 const display = document.querySelector("#display")
 
 
-console.log(clicks[0].classList);
+console.log(buttons[0].classList);
 
-for (let click of clicks) {
-    click.addEventListener("click", function (event) {
+for (let button of buttons) {
+    button.addEventListener("click", function (event) {
         console.log(event.target.textContent);
-        // console.dir(event);
-        newElement.innerText = `button clicked: ${event.target.textContent}`;
-        newElement.innerText = event.target.textContent
+        if (event.target.id === "equals") {
+            console.log("equals!");
+            return
+        }
+        newElement.innerText += event.target.textContent;
         display.appendChild(newElement);
-        return event.target.textContent;
     });
 }
 
-let numbers = document.querySelectorAll(".number");
-console.log(numbers);
-
-let operators = document.querySelectorAll(".operator");
-console.log(operators);
-
-for (let number of numbers) {
-    number.addEventListener("click", function (event) {
-        return event.target.textContent;
-        console.log(event.target.textContent)
-    })
-}
 
 
-for (let operator of operators) {
-    operator.addEventListener("click", function (event) {
-        return event.target.textContent;
-        console.log(event.target.textContent)
-    }
-    )
-}
+// TODO
+// Use these to do ** (for example)
+// let numbers = document.querySelectorAll(".number");
+// console.log(numbers);
+
+// let operators = document.querySelectorAll(".operator");
+// console.log(operators);
+
+// for (let number of numbers) {
+//     number.addEventListener("click", function (event) {
+//         return event.target.textContent;
+//         console.log(event.target.textContent)
+//     })
+// }
+
+
+// for (let operator of operators) {
+//     operator.addEventListener("click", function (event) {
+//         return event.target.textContent;
+//         console.log(event.target.textContent)
+//     }
+//     )
+// }
 
 
 

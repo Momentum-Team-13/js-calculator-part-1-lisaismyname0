@@ -134,3 +134,5 @@ if (adder == "+") {
 // const calculator = document.getElementsByClassName("click")
 
 // const keys = calculator.getElementsByClassName("")
+
+
