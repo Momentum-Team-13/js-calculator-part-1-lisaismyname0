@@ -1,0 +1,26 @@
+#container {
+    display: flex;
+    display: inline-block;
+    background-color: blue;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    background-color: green;
+    width: 200px;
+    height: 50px;
+    border: 1px solid;
+}
+
+.clicks {
+    border: 1px solid;
+}
+
+.unhighlight {
+    border: 5px solid white;
+}
+
+.hightlight {
+    border: 5px solid yellow;
+}

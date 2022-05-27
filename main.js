@@ -10,55 +10,40 @@ console.log(clicks[0].classList);
 for (let click of clicks) {
     click.addEventListener("click", function (event) {
         console.log(event.target.textContent);
-        console.dir(event);
+        // console.dir(event);
         newElement.innerText = `button clicked: ${event.target.textContent}`;
         newElement.innerText = event.target.textContent
         display.appendChild(newElement);
+        return event.target.textContent;
     });
 }
 
-// button assignments
+let numbers = document.querySelectorAll(".number");
+console.log(numbers);
 
-// let erase = document.getElementById("erase").addEventListener("click", function () { console.log("clear") })
+let operators = document.querySelectorAll(".operator");
+console.log(operators);
 
-// let click7 = document.getElementById("7").addEventListener("click", function () { console.log("7 was pressed") })
-
-// let click8 = document.getElementById("8").addEventListener("click", function () { console.log("8 was pressed") })
-
-// let click9 = document.getElementById("9").addEventListener("click", function () { console.log("9 was pressed") })
-
-// let divider = document.getElementById("divider").addEventListener("click", function () { console.log("/ was pressed") })
-
-// let click4 = document.getElementById("4").addEventListener("click", function () { console.log("4 was pressed") })
-
-// let click5 = document.getElementById("5").addEventListener("click", function () { console.log("5 was pressed") })
+for (let number of numbers) {
+    number.addEventListener("click", function (event) {
+        return event.target.textContent;
+        console.log(event.target.textContent)
+    })
+}
 
 
-// let click6 = document.getElementById("6").addEventListener("click", function () { console.log("6 was pressed") })
+for (let operator of operators) {
+    operator.addEventListener("click", function (event) {
+        return event.target.textContent;
+        console.log(event.target.textContent)
+    }
+    )
+}
 
 
-// let multiplier = document.getElementById("multiplier").addEventListener("click", function () { console.log("* was pressed") })
 
+// let num1 (i want this to be the returned value of the click event listenrs)
 
-// let click1 = document.getElementById("1").addEventListener("click", function () { console.log("1 was pressed") })
+// num1 =
 
-
-// let click2 = document.getElementById("2").addEventListener("click", function () { console.log("2 was pressed") })
-
-
-// let click3 = document.getElementById("3").addEventListener("click", function () { console.log("3 was pressed") })
-
-
-// let subtracter = document.getElementById("minus").addEventListener("click", function () { console.log("- was pressed") })
-
-
-// let click0 = document.getElementById("0").addEventListener("click", function () { console.log("0 was pressed") })
-
-
-// let clickdot = document.getElementById("dot").addEventListener("click", function () { console.log("9 was pressed") })
-
-
-// let equals = document.getElementById("equal").addEventListener("click", function () { console.log("= was pressed") })
-
-
-// let adder = document.getElementById("plus").addEventListener("click", function () { console.log("+ was pressed") }) 
+// click number-- > if not operator, then add secondNumber to value, if operator, perform function of operator 
