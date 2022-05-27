@@ -6,6 +6,7 @@ const eraser = document.getElementById("clear")
 let result = document.createElement("div");
 const display = document.querySelector("#display")
 
+
 console.log(buttons[0].classList);
 
 for (let button of buttons) {
@@ -18,50 +19,54 @@ for (let button of buttons) {
             display.appendChild(result);
             result.innerText = math.eval(display.innerText);
             // dom manipulation means replacing this with the value i want;
-            // return
+            // return is optional?
 
         }
+
         else if (event.target.id === "clear") {
-            result.innerText = "    ";
+            result.innerText = "  ";
         }
 
-        // else if (event.target.id === "multiplier") {
-        //     result.innerText = eval(display.innerText)
-        //     display.appendChild(result);
-        // }
+        else if (event.target.id === "multiplier") {
+            result.innerText = eval(display.innerText)
+            display.appendChild(result);
+        }
 
         else {
             result.innerText += event.target.textContent;
         }
 
-
     });
 }
 
-let operators = document.querySelectorAll(".operator");
-
-for (let operator of operators) {
-    operator.addEventListener("click", function (event) {
-        if (event.target.id === "multiplier") {
-            // result.innerText += event.target.textContent;
-            console.log(result.innerText);
-        }
-    }
-    )
-}
-
-
 // TODO
-// Use these to do ** (for example)
+
+// make "." read as "0." maybe by:
+// if "." is the first item in the Array, push [0.] in front
+// if (display.innerText[0] ="."){
+//     display.shift(0.)
+// }
+
+
+// if I want to use further classifications, here are the variables for my operator & number buttons... i began to attempt this with my multiply and divider ids:
+
+// let operators = document.querySelectorAll(".operator");
+
+// for (let operator of operators) {
+//     operator.addEventListener("click", function (event) {
+//         if (event.target.id === "multiply" && event.target.id === "divider") {
+//             result.innerText += event.target.textContent;
+//             console.log(result.innerText);
+//         }
+//     })
+// }
 // let numbers = document.querySelectorAll(".number");
 // console.log(numbers);
 
-//  math.eval(display.innerText)
+// here I am attempting to make it so that if there are a certain amount of numbers within the div,, then the font shrinks
 
-
-// for (let number of numbers) {
-//     number.addEventListener("click", function (event) {
-//         return event.target.textContent;
-//         console.log(event.target.textContent)
-//     })
+// if (result.length >= 6) {
+//     console.log("many numbers")
+//     display.style.fontsize = "x-small";
 // }
+

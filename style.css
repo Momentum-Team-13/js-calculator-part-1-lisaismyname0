@@ -3,14 +3,6 @@
     margin: 10px
 }
 
-/* #main {
-    background-color: darkblue;
-    width: 400px;
-    height: 700px
-} */
-
-/* is the main div necessary? */
-
 #container {
     display: flex;
     flex-direction: column;
@@ -72,7 +64,6 @@ button:active {
     transform: translateY(4px);
 }
 
-/* is there a way to remove rules from one button specifically using #unique bc i don't want #unique button to be logged */
 #display {
     width: 260px;
     background-color: rgb(127, 124, 124);
