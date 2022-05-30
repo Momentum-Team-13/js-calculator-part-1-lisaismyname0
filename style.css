@@ -68,12 +68,11 @@ button:active {
     width: 260px;
     background-color: rgb(127, 124, 124);
     font-family: 'Orbitron', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     pointer-events: none;
     justify-content: end;
     display: flex;
     font-family: 'Orbitron', sans-serif;
-    font-size: x-large;
     font-weight: bolder;
     align-content: center;
     justify-content: center;
