@@ -14,7 +14,7 @@ for (let button of buttons) {
     button.addEventListener("click", function (event) {
         console.log(event.target.textContent);
         display.appendChild(result);
-
+        
         if (event.target.id === "clickdot" && display.innerText.length === 0){
             result.innerText = 0.;
         }
@@ -30,8 +30,6 @@ for (let button of buttons) {
         if (event.target.id === "equals") {
             display.appendChild(result);
             result.innerText = math.eval(display.innerText);
-            // dom manipulation means replacing this with the value i want;
-            // return is optional?
         }
         
         else if (event.target.id === "clear") {
@@ -50,30 +48,51 @@ for (let button of buttons) {
     });
 }
 
+document.addEventListener('keydown', (event) => {
+    if (event.key == 0) {display.append("0")};
+    if (event.key == 1) {display.append("1")};
+    if (event.key == 2) {display.append("2")};
+    if (event.key == 3) {display.append("3")};
+    if (event.key == 4) {display.append("4")};
+    if (event.key == 5) {display.append("5")};
+    if (event.key == 6) {display.append("6")};
+    if (event.key == 7) {display.append("7")};
+    if (event.key == 8) {display.append("8")};
+    if (event.key == 9) {display.append("9")};
+    if (event.key == "+") {display.append("+")};
+    if (event.key == "-") {display.append("-")};
+    if (event.key == "/") {display.append("/")};
+    if (event.key == "*") {display.append("*")};
+    if (display.innerText.length >= 10){
+        display.style.fontSize = "medium";
+    } 
+    if (display.innerText.length >= 20){
+        display.style.fontSize = "small"
+    }
+});
+
+
+//I tried to play with getting the delete button to remove the last item from the string in the display:
+
+// if (event.key == "Backspace" || event.key == "Delete") {
+//     display.innerText.string.splice(0, -1);
+//     console.log("deleted!")}
+
+// the key press event listener is another concept I believe could use the switch method
+// document.addEventListener('keydown', (event) => {
+//     const keyPr = event.key;
+//     switch (keyPr){
+//     case event.key = 0:
+//         display.append("0");
+//         break;
+//     case event.key = 1:
+//         display.append("1");
+// }
+// });
 
 // TODO
 
-// make "." read as "0." maybe by:
-// if "." is the first item in the Array, push [0.] in front
-// if (display.innerText[0] ="."){
-    //     display.shift(0.)
-    // }
-    
-    // here i am attempting to make display read "0.0" if the display is empty (or at least if display.length = "   ", my value of the clear button, but I think i'm going to use a different method)
-    
-    // if (result.innerText = "   " && event.target.id === "clickdot") {
-        //     console.log("zeroes")    
-        // }
-        // else if (event.target.id === "clickdot" && display.innerText === "   ") {
-            //     result.innertext = "0.0";    
-            //     console.log("0.0")
-            // }
-            
-// if (event.target.id === "clickdot" && innertext.display.length == 0) {
-// console.log("hello")
-            
-//             }
-            
+
             // if I want to use further classifications, here are the variables for my operator & number buttons... i began to attempt this with my multiply and divider ids:
             
 // let operators = document.querySelectorAll(".operator");
@@ -88,11 +107,3 @@ for (let button of buttons) {
 // }
 // let numbers = document.querySelectorAll(".number");
 // console.log(numbers);
-
-// here I am attempting to make it so that if there are a certain amount of numbers within the div,, then the font shrinks
-
-// if (result.length >= 6) {
-//     console.log("many numbers")
-//     display.style.fontsize = "x-small";
-// }
-
