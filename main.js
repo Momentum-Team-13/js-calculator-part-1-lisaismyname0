@@ -63,6 +63,12 @@ document.addEventListener('keydown', (event) => {
     if (event.key == "-") { display.append("-") };
     if (event.key == "/") { display.append("/") };
     if (event.key == "*") { display.append("*") };
+    if (event.key == "^") {display.append("^")};
+    if (event.key == "(") {display.append("(")};
+    if (event.key == ")") {display.append(")")};
+    if (event.key =="%") {display.append("%")} ;
+    if (event.key == "c" || event.key == "C") {display.innerText ="   "}
+
     //I tried to play with getting the delete button to remove the last item from the string in the display:
     
     // let string = display.innerText.length
