@@ -46,11 +46,13 @@ for (let button of buttons) {
         }
         
     });
+    
 }
 
 document.addEventListener('keydown', (event) => {
-    if (event.key == 0) { display.append("0") };
-    if (event.key == 1) { display.append("1") };
+    // trying to tweak keydown event listeners... result.append causes the number to appear on the same line as the clicked numbers, but it will only appear if it's not the first number in the display. i've tried to trigger the event only if the display.innerText.length <= 0 but I must have missed something 
+    if (event.key == 0) { result.append("0");};
+    if (event.key == 1) { result.append("1") };
     if (event.key == 2) { display.append("2") };
     if (event.key == 3) { display.append("3") };
     if (event.key == 4) { display.append("4") };
@@ -68,7 +70,7 @@ document.addEventListener('keydown', (event) => {
     if (event.key == ")") {display.append(")")};
     if (event.key =="%") {display.append("%")} ;
     if (event.key == "c" || event.key == "C") {display.innerText ="   "}
-    if (event.key == "." && display.innerText.length === 0){ display.innerText = "0."}
+    if (event.key == "."){ display.innerText = "0."}
 
     //I tried to play with getting the delete button to remove the last item from the string in the display:
     
