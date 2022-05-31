@@ -27,6 +27,9 @@ for (let button of buttons) {
         if (event.target.id === "equals") {
             display.appendChild(result);
             result.innerText = math.eval(display.innerText);
+            if (display.innerText.length >= 10){
+                display.style.fontSize = "medium";
+            }
         }
         
         else if (event.target.id === "clear") {
@@ -36,14 +39,13 @@ for (let button of buttons) {
         else if (event.target.id === "multiply") {
             result.innerText += "*"
         }
-            
+        
         else {
-        result.innerText += event.target.textContent;
-            }
+            result.innerText += event.target.textContent;
+        }
         
     });
 }
-
 
 document.addEventListener('keydown', (event) => {
     if (event.key == 0) { display.append("0") };
@@ -76,8 +78,8 @@ document.addEventListener('keydown', (event) => {
     });
     
 // the key press event listener works but the numbers in the field don't show up level with the numbers that are pressed on the calculator) this is is another concept I believe could use the switch method maybe using something like the following:
-    // document.addEventListener('keydown', (event) => {
-        //     const keyPr = event.key;
+// document.addEventListener('keydown', (event) => {
+    //     const keyPr = event.key;
         //     switch (keyPr){
             //     case event.key = 0:
             //         display.append("0");
@@ -86,7 +88,7 @@ document.addEventListener('keydown', (event) => {
             //         display.append("1");
             // }
             // });
-        
+            
 //ADDITIONAL NOTES/TODO
 
 // if I want to use further classifications, here are the variables for my operator & number buttons... i began to attempt this with my multiply and divider ids:
@@ -94,26 +96,28 @@ document.addEventListener('keydown', (event) => {
 // let operators = document.querySelectorAll(".operator");
 
 // for (let operator of operators) {
-//     operator.addEventListener("click", function (event) {
-//         if (event.target.id === "multiply" && event.target.id === "divider") {
-//             result.innerText += event.target.textContent;
-//             console.log(result.innerText);
-//         }
-//     })
-// }
+    //     operator.addEventListener("click", function (event) {
+        //         if (event.target.id === "multiply" && event.target.id === "divider") {
+            //             result.innerText += event.target.textContent;
+            //             console.log(result.innerText);
+            //         }
+            //     })
+            // }
 // let numbers = document.querySelectorAll(".number");
 // console.log(numbers);
-
-
+                        
+                        
 // Attempts at including error messages / disallowing invalid inputs (these also seem to respond differently if I have math.eval() vs eval()enabled):
                         
 // if (console.log.includes = "Uncaught SyntaxError") { alert("impossible!") }
 // // ^ this causes an error message as soon as I reload the page
-                        
+
 // if (display.innerText.includes(".." || "//" || "-+" || "\+")) {
 //     alert("Invalid Input!")
 // }
-                            
+
 // if (math.eval(display.innerText) = NaN) {result.innerText 
 
 // }
+
+// else if (result =false){alert("Invalid Entry")}
