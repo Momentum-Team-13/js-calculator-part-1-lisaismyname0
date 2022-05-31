@@ -50,57 +50,61 @@ for (let button of buttons) {
 }
 
 document.addEventListener('keydown', (event) => {
-    // trying to tweak keydown event listeners... result.append causes the number to appear on the same line as the clicked numbers, but it will only appear if it's not the first number in the display. i've tried to trigger the event only if the display.innerText.length <= 0 but I must have missed something 
-    if (event.key == 0) { result.append("0");};
-    if (event.key == 1) { result.append("1") };
-    if (event.key == 2) { display.append("2") };
-    if (event.key == 3) { display.append("3") };
-    if (event.key == 4) { display.append("4") };
-    if (event.key == 5) { display.append("5") };
-    if (event.key == 6) { display.append("6") };
-    if (event.key == 7) { display.append("7") };
-    if (event.key == 8) { display.append("8") };
-    if (event.key == 9) { display.append("9") };
-    if (event.key == "+") { display.append("+") };
-    if (event.key == "-") { display.append("-") };
-    if (event.key == "/") { display.append("/") };
-    if (event.key == "*") { display.append("*") };
-    if (event.key == "^") {display.append("^")};
-    if (event.key == "(") {display.append("(")};
-    if (event.key == ")") {display.append(")")};
-    if (event.key =="%") {display.append("%")} ;
-    if (event.key == "c" || event.key == "C") {display.innerText ="   "}
-    if (event.key == "."){ display.innerText = "0."}
+    display.appendChild(result);
 
-    //I tried to play with getting the delete button to remove the last item from the string in the display:
+    let string = display.innerText
+    console.log(string)
     
-    // let string = display.innerText.length
-    // if (event.key == "Backspace" || event.key == "Delete") {
-        //     string.splice(0, -1);
-        //     console.log("deleted!")}
-        
     if (display.innerText.length >= 10) {
         display.style.fontSize = "medium";
     }
     if (display.innerText.length >= 20) {
         display.style.fontSize = "small"
     }
-});
     
-
-
-    // the key press event listener works but the numbers in the field don't show up level with the numbers that are pressed on the calculator) this is is another concept I believe could use the switch method maybe using something like the following:
-    // document.addEventListener('keydown', (event) => {
+        if (event.key == "Backspace" || event.key == "Delete") {
+                display.innerText += string.slice(0, -1);
+                console.log("deleted!");
+                console.log(string.slice)}
+                // pressing delete now repeats the first number in the display
+        if (event.key == 0) { result.innerText += "0"};
+        if (event.key == 1) { result.innerText += "1"};
+        if (event.key == 2) { result.innerText += "2" };
+        if (event.key == 3) { result.innerText += "3" };
+        if (event.key == 4) { result.innerText += "4" };
+        if (event.key == 5) { result.innerText +="5" };
+        if (event.key == 6) { result.innerText +="6" };
+        if (event.key == 7) { result.innerText +="7" };
+        if (event.key == 8) { result.innerText +="8" };
+        if (event.key == 9) { result.innerText +="9" };
+        if (event.key == "+") { result.innerText +="+" };
+        if (event.key == "-") { result.innerText +="-" };
+        if (event.key == "/") { result.innerText +="/" };
+        if (event.key == "*") { result.innerText +="*" };
+        if (event.key == "^") {result.innerText +="^"};
+        if (event.key == "(") {result.innerText += "("};
+        if (event.key == ")") {result.innerText +=")"};
+        if (event.key =="%") {result.innerText +="%"} ;
+        if (event.key == "c" || event.key == "C") {display.innerText ="   "}
+        
+        // I believe could use the switch method maybe using something like the following:
+        // document.addEventListener('keydown', (event) => {
         //     const keyPr = event.key;
         //     switch (keyPr){
-            //     case event.key = 0:
-            //         display.append("0");
-            //         break;
-            //     case event.key = 1:
-            //         display.append("1");
-            // }
-            // });
-            
+        //     case event.key = 0:
+        //         display.append("0");
+        //         break;
+        //     case event.key = 1:
+        //         display.append("1");
+        // }
+        // });
+        if (event.key == "."){ display.innerText = "0."}
+        else (result.innerText += event.key.keyContent)
+    });
+    
+    
+    
+
 //ADDITIONAL NOTES/TODO
 
 // if I want to use further classifications, here are the variables for my operator & number buttons... i began to attempt this with my multiply and divider ids:
@@ -135,3 +139,5 @@ for (let operator of operators) {
 // }
 
 // else if (result =false){alert("Invalid Entry")}
+
+// try {math.eval()} catch{}
