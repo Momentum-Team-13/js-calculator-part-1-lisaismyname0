@@ -65,9 +65,10 @@ document.addEventListener('keydown', (event) => {
         if (event.key == "Backspace" || event.key == "Delete") {
                 display.innerText += string.slice(0, -1);
                 console.log("deleted!");
-                console.log(string.slice)}
+                console.log(string.slice)
+            }
                 // pressing delete now repeats the first number in the display
-        if (event.key == 0) { result.innerText += "0"};
+        if (event.key == 0) {result.innerText += "0"};
         if (event.key == 1) { result.innerText += "1"};
         if (event.key == 2) { result.innerText += "2" };
         if (event.key == 3) { result.innerText += "3" };
@@ -86,7 +87,8 @@ document.addEventListener('keydown', (event) => {
         if (event.key == ")") {result.innerText +=")"};
         if (event.key =="%") {result.innerText +="%"} ;
         if (event.key == "c" || event.key == "C") {display.innerText ="   "}
-        
+        if (event.key == "."){ display.innerText = "0."}
+        else (result.innerText)
         // I believe could use the switch method maybe using something like the following:
         // document.addEventListener('keydown', (event) => {
         //     const keyPr = event.key;
@@ -98,8 +100,6 @@ document.addEventListener('keydown', (event) => {
         //         display.append("1");
         // }
         // });
-        if (event.key == "."){ display.innerText = "0."}
-        else (result.innerText += event.key.keyContent)
     });
     
     
